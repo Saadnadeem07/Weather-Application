@@ -1,0 +1,119 @@
+
+.navbar{
+    background-color:#0f1111;
+    color: white;
+    text-decoration: none;
+    height: 60px;
+    width: 100%;
+    padding-top: 30px;
+    padding-left: 10px;
+    position: fixed;
+    top: 0;
+}
+#navbarbutton{
+    background-color: #f08804;
+}
+#logo{
+    color: #f08804;
+}
+a{
+    margin-left: 30px;
+    margin-right: 200px;
+    text-decoration: none;
+    color: white;
+}
+
+
+body {
+    background: #1A374D;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    /* background: #394867; */
+    background: #406882;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 35px;
+    box-shadow: 10px 8px 20px 9px black;
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+h1 {
+    color: black;
+    margin: 8px 0;
+}
+
+input {
+    width: calc(100% - 16px);
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid white;
+    margin-top: 20px;
+}
+
+#cityInput {
+    border-radius: 10px;
+}
+
+button {
+    background: #7B8FA1;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100px;
+    font-size: 15px;
+}
+
+button:hover {
+    color: black;
+    background: #EEEEEE;
+}
+
+.weather-info {
+    margin-top: 10px;
+}
+
+#weather-icon {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto 10px;
+    margin-bottom: 0;
+    display: none;
+}
+
+#temp-div p {
+    color: #fff;
+    font-size: 70px;
+}
+
+p {
+    color: #fff;
+    font-size: medium
+}
+
+#invalidInput {
+    display: none;
+    color: red ;
+    
+}
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-top: 25px;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    bottom: 0
+}
