@@ -1,0 +1,245 @@
+/* ===== Design Tokens ===== */
+:root {
+  --bg-gradient: linear-gradient(135deg, #1a374d 0%, #406882 50%, #6998ab 100%);
+  --card-bg: rgba(255, 255, 255, 0.12);
+  --card-border: rgba(255, 255, 255, 0.25);
+  --accent: #f5a623;
+  --accent-hover: #ffb84d;
+  --text: #f4f7fb;
+  --text-muted: rgba(244, 247, 251, 0.7);
+  --error: #ff6b6b;
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  --radius: 24px;
+}
+
+/* ===== Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Poppins", "Segoe UI", Tahoma, sans-serif;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  padding: 18px 32px;
+  background: rgba(15, 17, 17, 0.55);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar .logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-right: auto;
+}
+
+.navbar a:not(.logo) {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.navbar a:not(.logo):hover {
+  color: var(--text);
+}
+
+/* ===== Layout ===== */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px;
+}
+
+/* ===== Weather Card ===== */
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+  padding: 36px 32px;
+  text-align: center;
+}
+
+.card h1 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+/* ===== Search ===== */
+.search {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.search input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--text);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.search input::placeholder {
+  color: var(--text-muted);
+}
+
+.search input:focus {
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.search button {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 12px;
+  background: var(--accent);
+  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.search button:hover {
+  background: var(--accent-hover);
+}
+
+.search button:active {
+  transform: scale(0.97);
+}
+
+/* ===== Messages ===== */
+.message {
+  font-size: 0.9rem;
+  min-height: 20px;
+  margin: 4px 0 0;
+}
+
+.message.error {
+  color: var(--error);
+}
+
+/* ===== Weather Result ===== */
+.weather {
+  margin-top: 24px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+.weather.show {
+  opacity: 1;
+  max-height: 600px;
+}
+
+.weather .city {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.weather .icon {
+  width: 140px;
+  height: 140px;
+  margin: 4px auto;
+}
+
+.weather .temp {
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.weather .condition {
+  font-size: 1.05rem;
+  text-transform: capitalize;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* ===== Detail Grid ===== */
+.details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.detail {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 14px 8px;
+}
+
+.detail .value {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.detail .label {
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  background: rgba(15, 17, 17, 0.4);
+}
+
+footer .heart {
+  color: var(--error);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .navbar {
+    gap: 14px;
+    padding: 14px 18px;
+  }
+  .navbar a:not(.logo) {
+    font-size: 0.85rem;
+  }
+  .card {
+    padding: 28px 22px;
+  }
+}

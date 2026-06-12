@@ -1,43 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Forecast</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Forecast</title>
+  <meta name="description" content="A clean, responsive weather forecast app powered by the OpenWeather API." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-    <div class="navbar">
-        <a id="logo" href="#">Weather App.Pk</a>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Maps & Radars</a>
-        <a href="#">Air Quality</a>
-        <a href="#">Weather News</a>
-        <!-- <input type="text" placeholder="Search Weather.pk" name="textbox" id="">
-        <button id="navbarbutton">Search</button> -->
-      </div>
-  
-    <div class="container">
-        <h1>Weather Forecast</h1>
-        <p id="invalidInput">Invalid Input</p>
-        <input type="text" id="cityInput" placeholder="Enter Country/City">
+  <nav class="navbar">
+    <a href="#" class="logo">Weather App.Pk</a>
+    <a href="#">Home</a>
+    <a href="#">Maps &amp; Radars</a>
+    <a href="#">Air Quality</a>
+    <a href="#">Weather News</a>
+  </nav>
+
+  <main>
+    <section class="card">
+      <h1>Weather Forecast</h1>
+
+      <div class="search">
+        <input type="text" id="cityInput" placeholder="Enter a city name…" autocomplete="off" />
         <button id="searchButton">Search</button>
+      </div>
+      <p id="message" class="message"></p>
 
-        <div class="weather-info">
-            <img id="weather-icon" alt="Weather Icon">
-            <p id="temp-div"></p>
-            <p id="weather-condition"></p>
-            <p id="humidity"></p>
-            <p id="wind-speed"></p>
+      <div class="weather" id="weather">
+        <p class="city" id="city"></p>
+        <img class="icon" id="icon" alt="Weather icon" />
+        <div class="temp" id="temp"></div>
+        <p class="condition" id="condition"></p>
+
+        <div class="details">
+          <div class="detail">
+            <div class="value" id="feels"></div>
+            <div class="label">Feels Like</div>
+          </div>
+          <div class="detail">
+            <div class="value" id="humidity"></div>
+            <div class="label">Humidity</div>
+          </div>
+          <div class="detail">
+            <div class="value" id="wind"></div>
+            <div class="label">Wind</div>
+          </div>
         </div>
-    </div>
-    <script src="script.js"></script>
-    <footer >
-        Made with &hearts; by Muhammad Saad Nadeem <br>
-        &#169; Copyright 2002-2024
-      </footer>
-  
+      </div>
+    </section>
+  </main>
 
+  <footer>
+    Made with <span class="heart">&hearts;</span> by Muhammad Saad Nadeem
+    &nbsp;&middot;&nbsp; &copy; 2024
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
